@@ -1,0 +1,29 @@
+Index: make-bsd.mk
+--- make-bsd.mk.orig
++++ make-bsd.mk
+@@ -3,6 +3,7 @@
+ INCLUDES=-isystem ext
+ DEFS=
+ LIBS=
++DESTDIR?=
+ 
+ include objects.mk
+ ONE_OBJS+=osdep/BSDEthernetTap.o ext/http-parser/http_parser.o
+@@ -187,12 +188,12 @@ debug:	FORCE
+ 	$(MAKE) -j ZT_DEBUG=1
+ 
+ install:	one
+-	rm -f /usr/local/sbin/zerotier-one
+-	cp zerotier-one /usr/local/sbin
+-	ln -sf /usr/local/sbin/zerotier-one /usr/local/sbin/zerotier-cli
+-	ln -sf /usr/local/sbin/zerotier-one /usr/local/bin/zerotier-idtool
++	rm -f $(DESTDIR)/usr/local/sbin/zerotier-one
++	cp zerotier-one $(DESTDIR)/usr/local/sbin
++	ln -sf zerotier-one $(DESTDIR)/usr/local/sbin/zerotier-cli
++	ln -sf ../sbin/zerotier-one $(DESTDIR)/usr/local/bin/zerotier-idtool
+ 
+ uninstall:	FORCE
+-	rm -rf /usr/local/sbin/zerotier-one /usr/local/sbin/zerotier-cli /usr/local/bin/zerotier-idtool /var/db/zerotier-one/zerotier-one.port /var/db/zerotier-one/zerotier-one.pid /var/db/zerotier-one/iddb.d
++	rm -rf $(DESTDIR)/usr/local/sbin/zerotier-one $(DESTDIR)/usr/local/sbin/zerotier-cli $(DESTDIR)/usr/local/bin/zerotier-idtool $(DESTDIR)/var/db/zerotier-one/zerotier-one.port $(DESTDIR)/var/db/zerotier-one/zerotier-one.pid $(DESTDIR)/var/db/zerotier-one/iddb.d
+ 
+ FORCE:

@@ -1,0 +1,10 @@
+bin/zerotier-idtool
+sbin/zerotier-cli
+@bin sbin/zerotier-one
+share/doc/zerotier-one/
+share/doc/zerotier-one/AUTHORS.md
+share/doc/zerotier-one/COPYING
+share/doc/zerotier-one/LICENSE.txt
+share/doc/zerotier-one/README.md
+share/doc/zerotier-one/RELEASE-NOTES.md
+share/doc/zerotier-one/SECURITY.md
