@@ -1,4 +1,7 @@
 bin/zerotier-idtool
+@man man/man1/zerotier-cli.1
+@man man/man1/zerotier-idtool.1
+@man man/man8/zerotier-one.8
 sbin/zerotier-cli
 @bin sbin/zerotier-one
 share/doc/zerotier-one/

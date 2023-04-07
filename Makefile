@@ -32,5 +32,10 @@ post-install:
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/zerotier-one/${i}
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc/zerotier-cli.1 ${PREFIX}/man/man1/zerotier-cli.1
+	${INSTALL_DATA} ${WRKSRC}/doc/zerotier-idtool.1 ${PREFIX}/man/man1/zerotier-idtool.1
+	${INSTALL_DATA_DIR} ${PREFIX}/man/man8
+	${INSTALL_DATA} ${WRKSRC}/doc/zerotier-one.8 ${PREFIX}/man/man8/zerotier-one.8
 
 .include <bsd.port.mk>
